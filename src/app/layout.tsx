@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import type { Metadata } from "next";
 import { Raleway, Poppins } from "next/font/google";
 import StyledComponentsRegistry from "@/lib/registry";
@@ -6,7 +6,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "BLink Studio",
   description: "Brilliant link studio",
 };
