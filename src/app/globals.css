@@ -60,3 +60,6 @@ a {
     color-scheme: dark;
   }
 }
+li{
+list-style: none;
+}
