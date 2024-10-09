@@ -1,4 +1,5 @@
 "use client";
+import { FaPaperPlane } from "react-icons/fa";
 import Button from "@/components/Button";
 import Link from "next/link";
 import styled from "styled-components";
@@ -28,32 +29,32 @@ export default function ContactPage() {
               </Link>
             </TextContainer>
           </ContactAddress>
-          <div>
-            <hr />
-          </div>
           <ContactFormContainer>
             <FocusedFieldLogo>
-              <div>Go</div>
+              <FaPaperPlane style={{ fontSize: "20px" }} />
             </FocusedFieldLogo>
-            <Contactform>
-              <div>
-                <label htmlFor="fullname">Full Name</label>
-                <input type="text" />
-              </div>
-              <div>
-                <label htmlFor="email">Email</label>
-                <input type="text" />
-              </div>
-              <div>
-                <label htmlFor="message">Message</label>
-                <textarea />
-              </div>
-              <div>
-                <Button href="/about" variant="primary" altText="Submit Form">
-                  Submit
-                </Button>
-              </div>
-            </Contactform>
+            <FormWrapper>
+              <Contactform>
+                <h2>Get in Touch!</h2>
+                <div>
+                  <label htmlFor="fullname">Full Name</label>
+                  <input type="text" placeholder="Enter your fullname" />
+                </div>
+                <div>
+                  <label htmlFor="email">Email</label>
+                  <input type="text" placeholder="Enter your email address" />
+                </div>
+                <div>
+                  <label htmlFor="message">Message</label>
+                  <textarea placeholder="Enter your feedback or  question here" />
+                </div>
+                <div>
+                  <Button href="/about" variant="primary" altText="Submit Form">
+                    Submit
+                  </Button>
+                </div>
+              </Contactform>
+            </FormWrapper>
           </ContactFormContainer>
         </MainSection>
       </InsideWrapper>
@@ -65,86 +66,142 @@ const Wrapper = styled.section`
   background-color: var(--background);
   display: flex;
   justify-content: center;
-  hr {
-    background-image: linear-gradient(to left, black, white, black);
-    border: none;
-    width: 10px;
-  }
 `;
 const InsideWrapper = styled.div`
   width: 1024px;
   height: 80%;
   padding: 40px;
+  hr {
+    background-image: linear-gradient(to right, black, white, black);
+    border: none;
+    /* width: 10px; */
+    height: 1px;
+    margin-bottom: 30px;
+    /* border: 2px solid white; */
+  }
+  @media (max-width: 425px) {
+    padding: 20px;
+  }
 `;
 const MainSection = styled.div`
   display: flex;
   height: 80%;
   justify-content: space-between;
-  hr {
-    background-image: linear-gradient(to top, black, white, black);
-    border: none;
-    width: 1px;
-    margin: 0 16px;
-    height: 100%;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 90px;
   }
 `;
 const WelcomeMessage = styled.div`
   line-height: 4;
   h1 {
     font-size: var(--font-large);
+    background: linear-gradient(
+      to right,
+      #505050 0,
+      #fff 10%,
+      #fff 11%,
+      #505050 15%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    /* animation-fill-mode: backwords; */
+    -webkit-text-size-adjust: none;
+    background-position: -90px;
+  }
+  @keyframes shine {
+    0% {
+      background-position: -90px;
+    }
+    50% {
+      background-position: 90px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+  @media (max-width: 425px) {
+    line-height: 3;
   }
 `;
 const ContactAddress = styled.div`
   width: 30%;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 const ContactFormContainer = styled.div`
   width: 60%;
   position: relative;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+`;
+const FormWrapper = styled.div`
+  background: linear-gradient(40deg, #fffffff5, #323232, #fffff5);
+  padding: 1px;
+  border-radius: 10px;
 `;
 const Contactform = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  font-size: var(--font-small);
+  font-family: var(--font-heading);
   justify-content: space-between;
   border-radius: 10px;
   padding: 30px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: black;
+  box-shadow: 0px 1rem 1.5rem -0.9rem #000000e1;
   div {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    margin-bottom: 15px;
+  }
+  h2 {
+    margin: 10px 0 20px 0;
   }
   label {
     display: block;
     margin-bottom: 6px;
     color: lightgray;
-    font-size: 16px;
   }
   input {
-    /* line-height: 2; */
+    width: 100%;
     outline: none;
     border-radius: 8px;
     padding: 14px 0;
     text-indent: 14px;
     font-size: inherit;
+    font-family: inherit;
     border: 1px solid #414141;
     background: transparent;
+    &:focus {
+      border: 0.1px solid #b3b2b2;
+    }
   }
   textarea {
     outline: none;
     border-radius: 8px;
-    padding: 14px 0;
-    text-indent: 14px;
-    font-size: inherit;
+    padding: 14px 10px;
+    font-size: var(--font-small);
     border: 1px solid #414141;
     background: transparent;
     min-width: 100%;
     max-width: 100%;
     min-height: 100px;
+    font-family: inherit;
+    font-size: inherit;
+    &:focus {
+      border: 0.1px solid #b3b2b2;
+    }
   }
   button {
-    margin-top: 10px;
     width: 100px;
+  }
+  a {
+    display: inline-block;
+  }
+  @media screen {
+    padding: 18px;
   }
 `;
 const DimmedTextTitle = styled.div`
@@ -162,9 +219,7 @@ const FocusedFieldLogo = styled.div`
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: 1px ridge #fff;
-
-  box-sizing: content-box;
+  border: 1px solid #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,14 +228,8 @@ const FocusedFieldLogo = styled.div`
   left: 50%;
   top: -20%;
   transform: translate(-50%, -50%);
-  div {
-    background-color: #fff;
-    color: green;
-    height: 42px;
-    width: 42px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  @media (max-width: 700px) {
+    top: -10%;
   }
 `;
