@@ -45,8 +45,9 @@ const PrimaryButton = styled.button`
   color: #18181a;
   display: inline-block;
   font-size: 15px;
-  padding: 18px 18px 17px;
+  padding: 14px 20px;
   text-decoration: none;
+  border-radius: 6px;
   cursor: pointer;
   background: #fff;
 
@@ -83,6 +84,9 @@ const PrimaryButton = styled.button`
     z-index: 50;
   }
 
+  &:hover {
+    border: 0.1px solid white;
+  }
   &:hover:after {
     transform-origin: bottom center;
     transform: skewY(9.3deg) scaleY(2);
