@@ -1,10 +1,18 @@
 "use client";
 import { FaPaperPlane } from "react-icons/fa";
-import Button from "@/components/Button";
+
 import Link from "next/link";
 import styled from "styled-components";
+import useFormValidate from "@/lib/useFormValidate";
 
 export default function ContactPage() {
+  const { data, errors, handleSubmit, handleChange } =
+    useFormValidate(submitForm);
+  function submitForm() {
+    console.log("Data is submitted");
+    console.log("Data -", data);
+    return data;
+  }
   return (
     <Wrapper>
       <InsideWrapper>
@@ -34,24 +42,39 @@ export default function ContactPage() {
               <FaPaperPlane style={{ fontSize: "20px" }} />
             </FocusedFieldLogo>
             <FormWrapper>
-              <Contactform>
+              <Contactform action="#" onSubmit={handleSubmit}>
                 <h2>Get in Touch!</h2>
                 <div>
                   <label htmlFor="fullname">Full Name</label>
-                  <input type="text" placeholder="Enter your fullname" />
+                  <input
+                    type="text"
+                    placeholder="Enter your fullname"
+                    value={data.fullname}
+                    onChange={handleChange}
+                    name="fullname"
+                  />
                 </div>
                 <div>
                   <label htmlFor="email">Email</label>
-                  <input type="text" placeholder="Enter your email address" />
+                  <input
+                    type="text"
+                    placeholder="Enter your email address"
+                    value={data.email}
+                    onChange={handleChange}
+                    name="email"
+                  />
                 </div>
                 <div>
                   <label htmlFor="message">Message</label>
-                  <textarea placeholder="Enter your feedback or  question here" />
+                  <textarea
+                    placeholder="Enter your feedback or  question here"
+                    value={data.message}
+                    onChange={handleChange}
+                    name="message"
+                  />
                 </div>
                 <div>
-                  <Button href="/about" variant="primary" altText="Submit Form">
-                    Submit
-                  </Button>
+                  <button type="submit">Submit</button>
                 </div>
               </Contactform>
             </FormWrapper>
