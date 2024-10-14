@@ -1,6 +1,6 @@
 "use client";
 import { FaPaperPlane } from "react-icons/fa";
-
+import { formData, formErrors } from "@/lib/types";
 import Link from "next/link";
 import styled from "styled-components";
 import useFormValidate from "@/lib/useFormValidate";
@@ -8,11 +8,12 @@ import useFormValidate from "@/lib/useFormValidate";
 export default function ContactPage() {
   const { data, errors, handleSubmit, handleChange } =
     useFormValidate(submitForm);
-  function submitForm() {
-    console.log("Data is submitted");
-    console.log("Data -", data);
+
+  function submitForm(): formData {
+    console.log("Data is submitted", data);
     return data;
   }
+
   return (
     <Wrapper>
       <InsideWrapper>
@@ -46,32 +47,43 @@ export default function ContactPage() {
                 <h2>Get in Touch!</h2>
                 <div>
                   <label htmlFor="fullname">Full Name</label>
-                  <input
+                  <Input
                     type="text"
                     placeholder="Enter your fullname"
                     value={data.fullname}
                     onChange={handleChange}
                     name="fullname"
+                    errors={!!errors.fullname}
                   />
+                  {errors.fullname && (
+                    <ErrorMessage>{errors.fullname}</ErrorMessage>
+                  )}
                 </div>
+
                 <div>
                   <label htmlFor="email">Email</label>
-                  <input
+                  <Input
                     type="text"
                     placeholder="Enter your email address"
                     value={data.email}
                     onChange={handleChange}
                     name="email"
+                    errors={!!errors?.email}
                   />
+                  {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
                 </div>
                 <div>
                   <label htmlFor="message">Message</label>
-                  <textarea
+                  <Textarea
                     placeholder="Enter your feedback or  question here"
                     value={data.message}
                     onChange={handleChange}
                     name="message"
+                    errors={!!errors.message}
                   />
+                  {errors.message && (
+                    <ErrorMessage>{errors.message}</ErrorMessage>
+                  )}
                 </div>
                 <div>
                   <button type="submit">Submit</button>
@@ -187,36 +199,7 @@ const Contactform = styled.form`
     margin-bottom: 6px;
     color: lightgray;
   }
-  input {
-    width: 100%;
-    outline: none;
-    border-radius: 8px;
-    padding: 14px 0;
-    text-indent: 14px;
-    font-size: inherit;
-    font-family: inherit;
-    border: 1px solid #414141;
-    background: transparent;
-    &:focus {
-      border: 0.1px solid #b3b2b2;
-    }
-  }
-  textarea {
-    outline: none;
-    border-radius: 8px;
-    padding: 14px 10px;
-    font-size: var(--font-small);
-    border: 1px solid #414141;
-    background: transparent;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100px;
-    font-family: inherit;
-    font-size: inherit;
-    &:focus {
-      border: 0.1px solid #b3b2b2;
-    }
-  }
+
   button {
     width: 100px;
   }
@@ -255,4 +238,42 @@ const FocusedFieldLogo = styled.div`
   @media (max-width: 700px) {
     top: -10%;
   }
+`;
+const Input = styled.input<{ errors?: boolean }>`
+  width: 100%;
+  outline: none;
+  border-radius: 8px;
+  padding: 14px 0;
+  text-indent: 14px;
+  font-size: inherit;
+  font-family: inherit;
+  /* border: 1px solid #414141; */
+  border: 1px solid ${({ errors }) => (errors ? "#fe8777" : "#414141")};
+
+  background: transparent;
+  &:focus {
+    border: 0.1px solid #b3b2b2;
+  }
+`;
+const Textarea = styled.textarea<{ errors?: boolean }>`
+  outline: none;
+  border-radius: 8px;
+  padding: 14px 10px;
+  font-size: var(--font-small);
+
+  border: 1px solid ${({ errors }) => (errors ? "#fe8777" : "#414141")};
+
+  background: transparent;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  font-family: inherit;
+  font-size: inherit;
+  &:focus {
+    border: 0.1px solid #b3b2b2;
+  }
+`;
+const ErrorMessage = styled.p`
+  color: #fe8777;
+  padding-top: 6px;
 `;
