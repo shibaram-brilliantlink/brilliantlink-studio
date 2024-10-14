@@ -53,7 +53,7 @@ export default function ContactPage() {
                     value={data.fullname}
                     onChange={handleChange}
                     name="fullname"
-                    errors={!!errors.fullname}
+                    // errors={!!errors.fullname}
                   />
                   {errors.fullname && (
                     <ErrorMessage>{errors.fullname}</ErrorMessage>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                     value={data.email}
                     onChange={handleChange}
                     name="email"
-                    errors={!!errors?.email}
+                    // errors={!!errors?.email}
                   />
                   {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
                 </div>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                     value={data.message}
                     onChange={handleChange}
                     name="message"
-                    errors={!!errors.message}
+                    // errors={!!errors.message}
                   />
                   {errors.message && (
                     <ErrorMessage>{errors.message}</ErrorMessage>
@@ -247,8 +247,8 @@ const Input = styled.input<{ errors?: boolean }>`
   text-indent: 14px;
   font-size: inherit;
   font-family: inherit;
-  /* border: 1px solid #414141; */
-  border: 1px solid ${({ errors }) => (errors ? "#fe8777" : "#414141")};
+  border: 1px solid #414141;
+  /* border: 1px solid ${({ errors }) => (errors ? "#fe8777" : "#414141")}; */
 
   background: transparent;
   &:focus {
@@ -260,8 +260,8 @@ const Textarea = styled.textarea<{ errors?: boolean }>`
   border-radius: 8px;
   padding: 14px 10px;
   font-size: var(--font-small);
-
-  border: 1px solid ${({ errors }) => (errors ? "#fe8777" : "#414141")};
+  border: 1px solid #414141;
+  /* border: 1px solid ${({ errors }) => (errors ? "#fe8777" : "#414141")}; */
 
   background: transparent;
   min-width: 100%;
@@ -276,4 +276,5 @@ const Textarea = styled.textarea<{ errors?: boolean }>`
 const ErrorMessage = styled.p`
   color: #fe8777;
   padding-top: 6px;
+  font-size: 0.875em;
 `;
