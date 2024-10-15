@@ -13,7 +13,6 @@ export default function ContactPage() {
     console.log("Data is submitted", data);
     return data;
   }
-
   return (
     <Wrapper>
       <InsideWrapper>
