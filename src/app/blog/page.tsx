@@ -5,6 +5,9 @@ import { CommonWrapper } from "@/styles/CommonStyles";
 import SocialMediaIcons from "@/components/SocialMediaIcons";
 import PromotePopup from "@/components/PromotePopup";
 import ToasterMessage from "@/components/ToasterMessage";
+import SmallCard from "@/components/temp/SmallCard";
+import MediumCard from "@/components/temp/MediumCard";
+import LargeCard from "@/components/temp/LargeCard";
 
 //*** Page logics, functions ***//
 
@@ -14,22 +17,15 @@ export default function Home() {
       <Header>
         <div>
           <h1>Blogs</h1>
-          <p>Home Blogs</p>
+          <p>Home = Blogs</p>
         </div>
       </Header>
       <MainWrapper>
-        <div>
-          <h2>Component 1 Social Media Icons container</h2>
-          <SocialMediaIcons />
-        </div>
-        <div>
-          <h2>Component 2 Promotion Popup</h2>
-          <PromotePopup />
-        </div>
-        <div>
-          <h2>Component 2 Toaster Message Popup</h2>
-          <ToasterMessage />
-        </div>
+        <ToasterMessage message="Congrats! Your transaction was successful" />
+        <PromotePopup title="" subtitle="" />
+        <SmallCard title="" date="" />
+        <MediumCard title="" description="" />
+        <LargeCard title="" date="" description="" />
       </MainWrapper>
     </>
   );
@@ -37,7 +33,8 @@ export default function Home() {
 
 //*** Styles                    ***//
 const Header = styled.header`
-  height: 100px;
+  height: 400px;
+  background-color: #ffffe013;
 `;
 const MainWrapper = styled(CommonWrapper)`
   min-height: 80vh;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function ToasterMessage() {
+export default function ToasterMessage({ message }: { message: string }) {
   return (
     <WrapperCard className="card">
       <svg
@@ -27,8 +27,8 @@ export default function ToasterMessage() {
         </svg>
       </div>
       <div className="message-text-container">
-        <p className="message-text">Success message</p>
-        <p className="sub-text">Everything seems great</p>
+        <p className="message-text">Message </p>
+        <p className="sub-text">{message}</p>
       </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ export default function ToasterMessage() {
   );
 }
 const WrapperCard = styled.div`
-  width: 330px;
+  width: 500px;
   height: 80px;
   border-radius: 8px;
   box-sizing: border-box;

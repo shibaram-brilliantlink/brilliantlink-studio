@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-export default function PromotePopup() {
+export default function PromotePopup({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle: string;
+}) {
   return (
     <WrapperCard>
       <div className="icon">
@@ -24,8 +30,10 @@ export default function PromotePopup() {
         </svg>
       </div>
       <div className="content">
-        <span className="title">Good news Mac users!</span>
-        <div className="desc">This software is now available for download.</div>
+        <span className="title">{title || "Good news Mac users!"}</span>
+        <div className="desc">
+          {subtitle || "This software is now available for download."}
+        </div>
         <div className="actions">
           <div>
             <a href="#" className="download">
@@ -57,7 +65,7 @@ export default function PromotePopup() {
   );
 }
 const WrapperCard = styled.div`
-  max-width: 320px;
+  max-width: 400px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -65,7 +73,7 @@ const WrapperCard = styled.div`
   background: #606c88;
   background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);
   background: linear-gradient(to right top, #3f4c6b, #606c88);
-  padding: 1rem;
+  padding: 2rem;
   color: rgb(107, 114, 128);
   box-shadow: 0px 87px 78px -39px rgba(0, 0, 0, 0.4);
   .icon {
