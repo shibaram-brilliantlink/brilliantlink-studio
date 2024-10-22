@@ -9,3 +9,12 @@ export interface formErrors {
   email: string;
   message: string;
 }
+export type IPageComponent = {
+  //Currently only blog data props from strapi response
+  id: string;
+  documentId: string;
+  title: string;
+  summary: string;
+  readTime: string;
+  // publishedAt: string;
+};

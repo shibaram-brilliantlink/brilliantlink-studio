@@ -11,10 +11,12 @@ async function fetchPageData() {
   return data;
 }
 export default async function BlogPage() {
+  const pageComponent = await fetchPageData();
+
   return (
     <>
       <h1>All blogs list..</h1>
-      <StandardPage />
+      <StandardPage components={pageComponent} pageName={"blogs_page"} />
     </>
   );
 }
