@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export default function LargeCard({
   title,
-  description,
-  date,
+  summary,
+  publishDate,
+  readTime,
 }: {
-  title: string;
-  date: string;
-  description: string;
+  title?: string;
+  publishDate?: string;
+  summary?: string;
+  readTime?: string;
 }) {
   return (
     <StyledWrapper>
@@ -18,11 +20,14 @@ export default function LargeCard({
       <div>
         <h3>{title || "Lorem title is here "}</h3>
         <p>
-          {description ||
+          {summary ||
             `Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, sunt.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, sunt.`}
         </p>
-        <p>{date || "08.08.2021"}</p>
+        <p>
+          {publishDate || "08.08.2021"} <br />
+          Reading time: {readTime || "5 min "}
+        </p>
       </div>
     </StyledWrapper>
   );
