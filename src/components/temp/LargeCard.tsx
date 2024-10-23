@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export default function LargeCard({
+  documentId,
   title,
   summary,
-  publishDate,
+  publishedDate,
   readTime,
 }: {
+  documentId?: string;
   title?: string;
-  publishDate?: string;
+  publishedDate?: string;
   summary?: string;
   readTime?: string;
 }) {
@@ -25,7 +27,7 @@ export default function LargeCard({
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, sunt.`}
         </p>
         <p>
-          {publishDate || "08.08.2021"} <br />
+          {publishedDate || "08.08.2021"} <br />
           Reading time: {readTime || "5 min "}
         </p>
       </div>
@@ -38,6 +40,7 @@ const StyledWrapper = styled.div`
   display: inline-flex;
   gap: 16px;
   padding: 10px;
+  margin: 10px 20px;
   h3 {
     padding: 4px 0;
   }

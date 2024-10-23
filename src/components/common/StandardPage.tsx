@@ -11,7 +11,6 @@ export type StandardPageProps = HTMLAttributes<HTMLDivElement> & {
 export default function StandardPage(props: StandardPageProps) {
   const { components, pageName } = props;
   if (!components) return null;
-
   return (
     <div>
       <h1 style={{ margin: "20px" }}>

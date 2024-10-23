@@ -16,5 +16,5 @@ export type IPageComponent = {
   title: string;
   summary: string;
   readTime: string;
-  // publishedAt: string;
+  publishedAt: string;
 };

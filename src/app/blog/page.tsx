@@ -11,7 +11,8 @@ async function fetchPageData() {
   return data;
 }
 export default async function BlogPage() {
-  const pageComponent = await fetchPageData();
+  const { data } = await fetchPageData();
+  const pageComponent = data;
 
   return (
     <>
