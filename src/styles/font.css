@@ -1,0 +1,11 @@
+/* :root {
+  --font-inter: "inter", sans-serif;
+} */
+.dynapuff-font {
+  font-family: var(--font-dynapuff), monospace;
+  font-size: 60px;
+}
+.inter-font {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 100px;
+}

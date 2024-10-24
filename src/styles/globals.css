@@ -13,8 +13,8 @@
 :root {
   --background: #000;
   --foreground: #fff;
-  --font-heading: "Raleway", sans-serif;
-  --font-body: "Poppins", sans-serif;
+  --font-heading: "raleway", sans-serif;
+  --font-body: "poppins", sans-serif;
   --font-large: 40px;
   --font-medium: 30px;
   --font-small: 16px;
@@ -24,6 +24,7 @@
   --btn-secondary-color: #000;
   --border-color: #484747;
   --theme-bgcolor: yellow;
+  /* -- fon-raw   de*/
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -47,7 +48,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-raleway);
   font-weight: 400;
 }
 
