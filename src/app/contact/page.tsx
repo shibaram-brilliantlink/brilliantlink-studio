@@ -91,6 +91,7 @@ export default function ContactPage() {
             </FormWrapper>
           </ContactFormContainer>
         </MainSection>
+        <TestDiv id="contact2">Contact page contact2 id div</TestDiv>
       </InsideWrapper>
     </Wrapper>
   );
@@ -276,4 +277,9 @@ const ErrorMessage = styled.p`
   color: #fe8777;
   padding-top: 6px;
   font-size: 0.875em;
+`;
+const TestDiv = styled.div`
+  height: 80vh;
+  background-color: #fff;
+  color: black;
 `;
