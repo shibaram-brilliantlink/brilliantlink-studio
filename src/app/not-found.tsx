@@ -2,7 +2,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <NotFoundWrapper>
       <h2>404</h2>
@@ -12,7 +12,9 @@ export default function NotFound() {
       </div>
     </NotFoundWrapper>
   );
-}
+};
+export default NotFound;
+
 const NotFoundWrapper = styled.section`
   height: 80vh;
   display: flex;

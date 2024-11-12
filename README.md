@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BrilliantLink - TechSpace
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+First, run the development server: npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project walkthrough.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Fixed naming conventions
 
-## Learn More
+- /components -- Reusable UI components
+  - /layout
+    - /header and /footer for different headers/footers for different pages!! required.
+- /sections -- Page specific and common section component
+- /context -- AuthContext.tsx or ThemeContext.tsx if any
+- /lib -- helper functions , hooks or any other third party integrations if any
 
-To learn more about Next.js, take a look at the following resources:
+  - utils
+  - hooks
+  - services // for business logic if any,
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* all folder name must be in lower-case-with-dash-for-words more than one
+<!-- --------------------------------------------------------------------------------------- -->
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Styling conventions
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- --font-raleway, --font-poppins for heading declared in homepage layout;
+-
+-

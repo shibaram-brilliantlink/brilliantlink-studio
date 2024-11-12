@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  outline: none;
+  scroll-behavior: smooth !important;
+  -webkit-font-smoothing: antialised;
+}
+
+:root {
+  /* Dummy or most of the variables are unused, declare here as per requirement */
+  --background: #000;
+  --foreground: #fff;
+  /* --font-raleway : declared in root layout.tsx  */
+  /* --font-poppins : declared in root layout.tsx */
+  /* Use it everywhere like this (Don't know any better way to use it , if any idea , welcomed.): 
+    font-family: var(--font-raleway), sans-serif;
+  */
+
+  --font-large: 40px;
+  --font-medium: 30px;
+  --font-small: 16px;
+  --btn-primary-bgcolor: #eaeefc;
+  --btn-primary-color: #000;
+  --btn-secondary-bgcolor: #eaeefc;
+  --btn-secondary-color: #000;
+  --border-color: #484747;
+  --theme-bgcolor: yellow;
+}
+
+/* @media (prefers-color-scheme: dark) { */
+/* :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  } */
+/* } */
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  /* background: var(--background); */
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-raleway);
+  font-weight: 400;
+}
+span {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 60px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+ul,
+ol {
+  list-style: none;
+}

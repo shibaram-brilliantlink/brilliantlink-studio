@@ -1,3 +1,5 @@
+// This file is used for SSR/SSG setup of styled component in nextjs...
+
 "use client";
 import { useState } from "react";
 import { ServerStyleSheet, StyleSheetManager } from "styled-components";
@@ -9,6 +11,7 @@ export default function StyledComponentsRegistry({
   children: React.ReactNode;
 }) {
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet());
+
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
     styledComponentsStyleSheet.instance.clearTag();

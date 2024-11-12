@@ -1,10 +1,24 @@
-"use client";
-import styled from "styled-components";
+//*** Imports                 ***//
+import StandardPage from "@/components/common/StandardPage";
 
-export default function Home() {
-  return <Wrapper>You are in a common Blog page </Wrapper>;
+//*** Page logics, functions ***//
+async function fetchPageData() {
+  const res = await fetch(
+    "http://127.0.0.1:1337/api/articles?fields[0]=title&fields[1]=summary&fields[2]=readTime&fields[3]=publishedAt"
+  );
+  const data = await res.json();
+  // console.log(data);
+  return data;
 }
-const Wrapper = styled.div`
-  background-color: lightgray;
-  height: 80vh;
-`;
+export default async function BlogPage() {
+  const { data } = await fetchPageData();
+  const pageComponent = data;
+  // console.log(data);
+
+  return (
+    <>
+      <h1>All blogs list..</h1>
+      <StandardPage components={pageComponent} pageName={"blogs_page"} />
+    </>
+  );
+}
