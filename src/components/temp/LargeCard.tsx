@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export default function LargeCard({
-  documentId,
+  // documentId,
   title,
   summary,
   publishedDate,
   readTime,
 }: {
-  documentId?: string;
+  // documentId?: string;
   title?: string;
   publishedDate?: string;
   summary?: string;

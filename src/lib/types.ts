@@ -19,7 +19,7 @@ export interface formErrors {
 export type IPageComponent = {
   //Currently only blog data props from strapi response
   id: string;
-  documentId: string;
+  // documentId: string;
   title: string;
   summary: string;
   readTime: string;

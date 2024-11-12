@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { formData, formErrors } from "./types";
+import { formData, formErrors } from "../types";
 
 export default function useFormValidate<T>(callback: () => T) {
   // Generic T allows callback to return any type
@@ -17,7 +17,7 @@ export default function useFormValidate<T>(callback: () => T) {
     if (isSubmitted && Object.keys(errors).length === 0) {
       callback();
     }
-  }, [errors]);
+  }, [errors, callback, isSubmitted]);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

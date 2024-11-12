@@ -9,7 +9,9 @@ export type IStandardPageProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 const StandardPage = (props: IStandardPageProps) => {
-  const { components, pageName } = props;
+  // const { components, pageName } = props;
+  const { components } = props;
+
   if (!components) return null;
   return (
     <div>

@@ -14,7 +14,7 @@ const StandardComponent = (props: IStandardComponentProps) => {
   return (
     // temporary card......
     <LargeCard
-      documentId={content.documentId}
+      // documentId={content.documentId}
       title={content.title}
       summary={content.summary}
       readTime={content.readTime}

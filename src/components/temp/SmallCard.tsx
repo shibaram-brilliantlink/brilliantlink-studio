@@ -10,7 +10,7 @@ export default function SmallCard({
   return (
     <StyledWrapper>
       <div>
-        <img src={"/chain.png"} width="60" alt="Profile image" />
+        {/* <img src={"/chain.png"} width="60" alt="Profile image" /> */}
       </div>
       <div>
         <p>Small Card</p>
