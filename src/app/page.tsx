@@ -1,4 +1,5 @@
 "use client";
+import { CommonWrapper } from "@/styles/CommonStyles";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -6,11 +7,12 @@ import styled from "styled-components";
 //   await new Promise((resolve) => setTimeout(resolve, 3000));
 //   return { data: "Random data to check loading component" };
 // }
-export default function Home() {
+const HomePage = () => {
   // const data = await delayFetchData();
   return (
     <>
       <Wrapper>
+        <span>Hello font used from var(--font-heading)</span>
         Hello from homepage;
         <p>Verifying git changes are updated in deployment or not</p>
         <br />
@@ -26,12 +28,14 @@ export default function Home() {
       </Div>
     </>
   );
-}
-const Wrapper = styled.div`
+};
+export default HomePage;
+
+const Wrapper = styled(CommonWrapper)`
   background-color: lightgreen;
   height: 100vh;
 `;
-const Div = styled.div`
+const Div = styled(CommonWrapper)`
   height: 80vh;
   background-color: #fff;
   color: black;

@@ -1,3 +1,5 @@
+// Widely used common, reusable, styled components will come here.(for now)--------------------------
+
 import styled from "styled-components";
 
 export const CommonWrapper = styled.div`

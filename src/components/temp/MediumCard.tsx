@@ -10,7 +10,7 @@ export default function MediumCard({
     <StyledWrapper>
       <div>
         <span>Medium card</span>
-        <img src={"/engineers1.jpeg"} alt="engineer" />
+        {/* <img src={"/engineers1.jpeg"} alt="engineer" /> */}
       </div>
       <div>
         <h4>{title || "Medium card title lorem ipsum kitoi"}</h4>

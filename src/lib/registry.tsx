@@ -1,3 +1,5 @@
+// This file is used for SSR/SSG setup of styled component in nextjs...
+
 "use client";
 import { useState } from "react";
 import { ServerStyleSheet, StyleSheetManager } from "styled-components";

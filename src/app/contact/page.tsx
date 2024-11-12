@@ -1,9 +1,9 @@
 "use client";
 import { FaPaperPlane } from "react-icons/fa";
-import { formData, formErrors } from "@/lib/types";
+import { formData } from "@/lib/types";
 import Link from "next/link";
 import styled from "styled-components";
-import useFormValidate from "@/lib/useFormValidate";
+import useFormValidate from "@/lib/hooks/useFormValidate";
 
 export default function ContactPage() {
   const { data, errors, handleSubmit, handleChange } =
@@ -17,7 +17,7 @@ export default function ContactPage() {
     <Wrapper>
       <InsideWrapper>
         <WelcomeMessage>
-          <h1>Let's Connect</h1>
+          <h1>Let&apos;s Connect</h1>
         </WelcomeMessage>
         <hr />
         <MainSection>

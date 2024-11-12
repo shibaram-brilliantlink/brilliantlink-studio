@@ -1,3 +1,10 @@
+/* Temporary file , define all types on the same page where component is defined......
+
+-- will delete soon ---
+-----------------------------------------------------------
+-----------------------------------------------------------
+*/
+
 //contact form page types
 export interface formData {
   fullname: string;

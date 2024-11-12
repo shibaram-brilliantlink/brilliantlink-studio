@@ -2,13 +2,13 @@ import { HTMLAttributes } from "react";
 import StandardComponent from "./StandardComponent";
 import { IPageComponent } from "@/lib/types";
 
-export type StandardPageProps = HTMLAttributes<HTMLDivElement> & {
+export type IStandardPageProps = HTMLAttributes<HTMLDivElement> & {
   // for now blog list data
   components: IPageComponent[];
   pageName?: string;
 };
 
-export default function StandardPage(props: StandardPageProps) {
+const StandardPage = (props: IStandardPageProps) => {
   const { components, pageName } = props;
   if (!components) return null;
   return (
@@ -24,4 +24,5 @@ export default function StandardPage(props: StandardPageProps) {
       </div>
     </div>
   );
-}
+};
+export default StandardPage;

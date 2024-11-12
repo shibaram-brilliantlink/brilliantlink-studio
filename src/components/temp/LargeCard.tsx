@@ -17,7 +17,7 @@ export default function LargeCard({
     <StyledWrapper>
       <div>
         <span>Large Card</span>
-        <img src={"/engineer2.jpeg"} alt="Profile image" />
+        {/* <img src={"/engineer2.jpeg"} alt="Profile image" /> */}
       </div>
       <div>
         <h3>{title || "Lorem title is here "}</h3>

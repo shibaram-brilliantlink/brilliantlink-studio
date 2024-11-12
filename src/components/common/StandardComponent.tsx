@@ -2,13 +2,17 @@
 import { IPageComponent } from "@/lib/types";
 import LargeCard from "../temp/LargeCard";
 
-export type StandardComponentProps = {
+export type IStandardComponentProps = {
   content: IPageComponent;
   pageName?: string;
 };
-export default function StandardComponent(props: StandardComponentProps) {
-  const { content, pageName } = props;
+
+const StandardComponent = (props: IStandardComponentProps) => {
+  // const { content, pageName } = props;
+  const { content } = props;
+
   return (
+    // temporary card......
     <LargeCard
       documentId={content.documentId}
       title={content.title}
@@ -17,4 +21,5 @@ export default function StandardComponent(props: StandardComponentProps) {
       publishedDate={content.publishedAt}
     />
   );
-}
+};
+export default StandardComponent;

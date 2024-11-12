@@ -1,11 +1,13 @@
 "use client";
 import styled from "styled-components";
 
-export default function Loading() {
+const Loading = () => {
   return (
     <LoadingWrapper>Home Page is loading, Please wait..... </LoadingWrapper>
   );
-}
+};
+export default Loading;
+
 const LoadingWrapper = styled.section`
   height: 80vh;
   display: flex;

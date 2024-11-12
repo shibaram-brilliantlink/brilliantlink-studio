@@ -11,10 +11,15 @@
 }
 
 :root {
+  /* Dummy or most of the variables are unused, declare here as per requirement */
   --background: #000;
   --foreground: #fff;
-  --font-heading: "raleway", sans-serif;
-  --font-body: "poppins", sans-serif;
+  /* --font-raleway : declared in root layout.tsx  */
+  /* --font-poppins : declared in root layout.tsx */
+  /* Use it everywhere like this (Don't know any better way to use it , if any idea , welcomed.): 
+    font-family: var(--font-raleway), sans-serif;
+  */
+
   --font-large: 40px;
   --font-medium: 30px;
   --font-small: 16px;
@@ -24,7 +29,6 @@
   --btn-secondary-color: #000;
   --border-color: #484747;
   --theme-bgcolor: yellow;
-  /* -- fon-raw   de*/
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -51,7 +55,10 @@ h3 {
   font-family: var(--font-raleway);
   font-weight: 400;
 }
-
+span {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 60px;
+}
 a {
   color: inherit;
   text-decoration: none;
