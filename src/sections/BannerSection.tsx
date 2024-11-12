@@ -9,7 +9,12 @@ export type IBannerSectionProps = {
 };
 
 const BannerSection = (props: IBannerSectionProps) => {
-  const { heading, image, description } = props;
+  const {
+    heading,
+    image,
+
+    description,
+  } = props;
   return (
     <Section image={image}>
       <div>
@@ -27,6 +32,8 @@ const Section = styled.div<{ image?: string }>`
     image
       ? `radial-gradient(rgba(0, 0, 0, 0.70) 5%, rgba(0, 0, 0, 0.95)), url(${image})`
       : `rgba(255,0,0,0.5)`};
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   height: 30vh;
 

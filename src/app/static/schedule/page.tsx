@@ -1,5 +1,6 @@
 import BannerSection from "@/sections/BannerSection";
 import { bannerSectionData as bannerData } from "@/mockdata/mock";
+import ListCard from "@/sections/ListCard";
 
 export default function SchedulePage() {
   return (
@@ -11,7 +12,7 @@ export default function SchedulePage() {
           image={bannerData?.image}
         />
       )}
-      end of banner section
+      <ListCard />
     </>
   );
 }
