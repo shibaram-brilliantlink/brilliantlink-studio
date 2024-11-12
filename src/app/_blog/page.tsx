@@ -13,7 +13,7 @@ async function fetchPageData() {
 export default async function BlogPage() {
   const { data } = await fetchPageData();
   const pageComponent = data;
-  // console.log(data);
+  console.log(data);
 
   return (
     <>
